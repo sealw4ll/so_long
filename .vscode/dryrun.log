@@ -1,0 +1,14 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/wting/42cursus/so_long'
+gcc -Wall -Werror -Wextra    -c -o so_long.o so_long.c
+gcc -Wall -Werror -Wextra    -c -o images.o images.c
+gcc -Wall -Werror -Wextra    -c -o split.o split.c
+gcc -Wall -Werror -Wextra    -c -o maps.o maps.c
+gcc -Wall -Werror -Wextra    -c -o exit.o exit.c
+gcc -Wall -Werror -Wextra    -c -o movemint.o movemint.c
+gcc -Wall -Werror -Wextra    -c -o itoa.o itoa.c
+make -C ./printf/
+gcc so_long.o images.o split.o maps.o exit.o movemint.o itoa.o libftprintf.a -lmlx -framework OpenGL -framework AppKit -fsanitize=address -g3 -o so_long
+mv *.o ./objs/
+make: Leaving directory `/Users/wting/42cursus/so_long'
+ 
